@@ -1,0 +1,65 @@
+🤖 AI CODING TOOLS: CLAUDE CODE vs GEMINI CLI vs ANTIGRAVITY
+Hướng dẫn dành cho người mới bắt đầu  ·  Data Analyst Team  ·  2026
+
+PHẦN 1 — 3 CÔNG CỤ AI LÀ GÌ? TẠI SAO LẠI SO SÁNH CHÚNG?
+Trong thế giới phát triển phần mềm, ba trợ lý AI dòng lệnh (CLI — Command Line Interface) đang nổi bật nhất hiện nay là Claude Code, Gemini CLI và AntiGravity. Cả ba đều hỗ trợ lập trình viên (developer) và nhà phân tích dữ liệu (data analyst — DA) làm việc hiệu quả hơn — nhưng theo những cách khác nhau. Phần này giải thích ngắn gọn bản chất của từng công cụ.
+
+
+PHẦN 2 — BẢNG SO SÁNH TOÀN DIỆN (13 TIÊU CHÍ KỸ THUẬT)
+Bảng dưới đây so sánh toàn diện giữa 3 công cụ theo từng tiêu chí kỹ thuật quan trọng:
+
+PHẦN 3 — CLAUDE CODE vs GEMINI CODE ASSIST: HAI LOẠI KHÁC NHAU
+⚠️ Lưu ý quan trọng: Gemini CLI (dùng terminal — dòng lệnh) khác hoàn toàn với Gemini Code Assist (tích hợp vào IDE — Môi trường phát triển tích hợp như VS Code). Bảng dưới giúp phân biệt rõ vai trò của từng công cụ để tránh nhầm lẫn khi chọn đúng tool cho đúng nhu cầu:
+
+PHẦN 4 — 4 TÍNH NĂNG "HAY HO" CỦA ANTIGRAVITY MÀ NGƯỜI MỚI CẦN BIẾT
+1. Kiến trúc Autonomous Agent (Tác tử Tự trị)
+AntiGravity không đơn giản là một chatbox (hộp chat thông thường). Khi bạn giao một task phức tạp, nó tự động thực hiện toàn bộ vòng lặp sau:
+▸  Lên kế hoạch thực hiện từng bước (Planning — lập kế hoạch)
+▸  Chạy lệnh terminal (ví dụ: npx, pip install, git commit)
+▸  Đọc/viết file code trực tiếp vào project (file I/O — nhập/xuất tệp)
+▸  Tạo ảnh minh họa AI (Generate Image) thay vì để placeholder (ô trống chờ) trống
+▸  Tự kiểm tra kết quả và báo lại — không cần bạn can thiệp giữa chừng.
+
+2. Hệ thống "Bộ não" — Knowledge Items (KIs — Kho Kiến Thức)
+Đây là thứ khiến AntiGravity khác biệt hoàn toàn. Thay vì nhớ bằng file tĩnh (static file — như CLAUDE.md phải tự viết tay), AntiGravity tự động chắt lọc (distill) bài học từ các phiên làm việc trước, lưu vào:
+  📁  C:\Users\<you>\.gemini\antigravity\knowledge\
+▸  Hỏi về lỗi quen thuộc? → Nó tự tra KI xem trước đó sửa thế nào.
+▸  Bạn thường dùng naming convention (quy ước đặt tên) nào? → Nó tự nhớ và áp dụng nhất quán.
+▸  Không cần "dạy lại" mỗi lần mở hội thoại (session) mới.
+
+3. Thao tác Trình duyệt — Browser Subagent (Agent Con Điều Khiển Trình Duyệt)
+AntiGravity có thể kích hoạt một “phụ tá ảo” (subagent) mở trình duyệt ngầm (headless browser) để:
+▸  Truy cập trang web, đọc nội dung, cuộn trang (scroll)
+▸  Thực hiện click và nhập dữ liệu tự động (web automation)
+▸  Ghi lại toàn bộ thao tác thành video .webp hoặc ảnh screenshot (ảnh chụp màn hình)
+▸  Lưu kết quả vào folder Artifacts để báo cáo cho bạn
+🎯 Ứng dụng cho DA team: Tự động crawl (thu thập) dữ liệu, kiểm tra giao diện dashboard (bảng điều khiển), chụp màn hình báo cáo.
+
+4. Artifacts — Hệ thống Hiển thị Báo cáo Chuyên nghiệp
+Thay vì đọc 500 dòng text trắng trên nền đen, AntiGravity xuất kết quả ra file Artifacts (.md — Markdown) với:
+▸  Bảng biểu (Tables) và biểu đồ kiến trúc (Mermaid diagrams — sơ đồ dạng code)
+▸  Carousel slides (trang trình chiếu dạng băng chuyền) — nhấn mũi tên để xem từng bước phân tích
+▸  Code diff (so sánh trước/sau chỉnh sửa) có màu highlight (tô sáng)
+▸  File link có thể click trực tiếp tới đoạn code liên quan (deep linking — liên kết sâu)
+✅ Kết quả: Hội thoại chat ngắn gọn, báo cáo tài liệu rõ ràng — rất phù hợp để bàn giao (handover) với team.
+
+PHẦN 5 — TIPS THỰC CHIẾN CHO DA TEAM
+💡  Prompt chất lượng cao:  Khi dùng AntiGravity, thêm từ khóa chất lượng vào prompt (câu lệnh bạn gõ): "Premium design", "Dynamic aesthetics", "Modern typography" → Kết quả UI/dashboard cải thiện đáng kể so với prompt thông thường.
+💡  Tận dụng hệ thống KIs:  Sau mỗi phiên phân tích quan trọng, hỏi AntiGravity: "Hãy lưu pattern query (mẫu câu truy vấn) này vào Knowledge Items." Lần sau nó sẽ tự áp dụng mà không cần nhắc lại.
+💡  File hướng dẫn _GEMINI.md trong project:  Đặt file _GEMINI.md ở thư mục gốc (root directory) project của team với mô tả: cấu trúc thư mục, naming convention (quy ước đặt tên), tool thường dùng. AntiGravity sẽ đọc file này ngay khi mở project và làm việc đúng context (ngữ cảnh).
+💡  Không dùng BYOK (Bring Your Own Key — tự mang API key):  AntiGravity hiện không hỗ trợ đổi model (mô hình AI) tùy ý vì các khả năng Agentic (tool-calling, browser subagent...) được Google DeepMind huấn luyện riêng trên các model tích hợp sẵn (built-in). Bạn vẫn có thể viết code gọi API bất kỳ — nhưng AntiGravity (agent) chỉ chạy trên bộ model được tích hợp.
+
+PHẦN 6 — MCP — MODEL CONTEXT PROTOCOL LÀ GÌ?
+🔌 MCP (Model Context Protocol — Giao thức Ngữ cảnh Mô hình) giống như ổ cắm điện chuẩn quốc tế. Nhà sản xuất thiết bị (quạt, tủ lạnh, laptop...) chỉ cần làm cái phích cắm đúng chuẩn — thì cắm vào ổ điện nước nào cũng chạy được. Không cần hỏi ổ điện đó của hãng nào.
+MCP là chuẩn giao tiếp mở (open standard) do Anthropic tạo ra, cho phép AI Agent (tác tử AI) “cắm vào” bất kỳ công cụ/dịch vụ bên ngoài nào — miễn là công cụ đó “chìa ra” một MCP Server (máy chủ MCP).
+🛠️ Cơ chế hoạt động — 3 thành phần
+
+🌍 Ví dụ thực tế — Tool nào đã có MCP Server?
+
+⚖️ So sánh mức độ hỗ trợ MCP giữa 3 công cụ
+
+📌 Vì Anthropic là tác giả của chuẩn MCP, nên Claude Code có lợi thế về ecosystem (hệ sinh thái) — nhiều tool bên thứ 3 (third-party) viết MCP Server cho Claude trước, rồi mới porting (chuyển đổi) sang công cụ khác.
+
+Ví dụ thực tế: Nếu team có database BigQuery và cài MCP Server cho BigQuery, bạn có thể nói với AntiGravity:
+“Lấy dữ liệu doanh số tháng 3 từ BigQuery, vẽ biểu đồ trend (xu hướng) và lưu báo cáo vào Notion.”
+→ AntiGravity sẽ tự gọi BigQuery qua MCP, xử lý data (dữ liệu), rồi gọi Notion qua MCP để tạo trang báo cáo — không cần bạn làm thủ công bước nào.
