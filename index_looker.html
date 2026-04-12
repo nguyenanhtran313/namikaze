@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI CODING TOOLS: CLAUDE CODE vs GEMINI CLI vs ANTIGRAVITY</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .reveal {
+      font-family: 'Inter', 'Google Sans', sans-serif;
+      font-size: 24px;
+      color: #202124;
+      background-color: #f8f9fa;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4 {
+      font-family: 'Inter', 'Google Sans', sans-serif;
+      font-weight: 600;
+      color: #202124;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .reveal h1 {
+      font-size: 2.3em;
+      text-align: left;
+      line-height: 1.2;
+      color: #1a73e8;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      text-align: left;
+      border-bottom: 2px solid #e8eaed;
+      padding-bottom: 12px;
+      display: inline-block;
+      margin-bottom: 35px;
+      color: #202124;
+    }
+
+    .reveal h3 {
+      font-size: 1.15em;
+      text-align: left;
+      color: #3c4043;
+      font-weight: 600;
+    }
+
+    .reveal p {
+      font-size: 1em;
+      line-height: 1.6;
+      text-align: left;
+      font-weight: 400;
+      color: #3c4043;
+    }
+
+    .reveal ul {
+      display: block;
+      text-align: left;
+      font-weight: 400;
+      font-size: 0.95em;
+      color: #3c4043;
+      padding-left: 20px;
+    }
+
+    .reveal li {
+      margin-bottom: 14px;
+    }
+
+    .reveal strong {
+      font-weight: 600;
+      color: #202124;
+    }
+
+    .highlight-green {
+      color: #137333;
+      font-weight: 600;
+    }
+
+    .highlight-blue {
+      color: #1a73e8;
+      font-weight: 600;
+    }
+
+    .highlight-purple {
+      color: #9334e6;
+      font-weight: 600;
+    }
+
+    .serif-quote {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1em;
+      font-style: normal;
+      color: #1a73e8;
+      background: #e8f0fe;
+      border-left: 4px solid #1a73e8;
+      padding: 16px 24px;
+      margin: 30px 0;
+      text-align: left;
+      line-height: 1.5;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Card Styling */
+    .card {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #dadce0;
+      border-top: 4px solid #dadce0;
+      text-align: left;
+      box-shadow: 0 1px 3px rgba(60,64,67,0.1), 0 1px 2px rgba(60,64,67,0.06);
+      font-size: 0.85em;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 6px rgba(60,64,67,0.1), 0 2px 4px rgba(60,64,67,0.06);
+      transform: translateY(-2px);
+    }
+
+    .card-claude {
+      border-top-color: #34A853;
+    }
+
+    .card-gemini {
+      border-top-color: #1A73E8;
+    }
+
+    .card-anti {
+      border-top-color: #A142F4;
+    }
+
+    /* Table Styling */
+    .reveal table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.7em;
+      margin-top: 20px;
+      box-shadow: 0 1px 2px rgba(60,64,67,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #dadce0;
+    }
+
+    .reveal th,
+    .reveal td {
+      border-bottom: 1px solid #dadce0;
+      padding: 16px;
+      text-align: left;
+      line-height: 1.4;
+      background: #fff;
+    }
+
+    .reveal th {
+      font-weight: 600;
+      color: #5f6368;
+      background-color: #f1f3f4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9em;
+    }
+    
+    .reveal tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Navigation Buttons on Cover */
+    .nav-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 40px;
+      justify-content: flex-start;
+    }
+
+    .nav-btn {
+      padding: 10px 20px;
+      border: 1px solid #dadce0;
+      background: #ffffff;
+      color: #1a73e8;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.6em;
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      text-decoration: none !important;
+      box-shadow: 0 1px 2px rgba(60,64,67,0.06);
+    }
+
+    .nav-btn:hover {
+      background: #f8fbfd;
+      color: #174ea6;
+      border-color: #d2e3fc;
+      transform: translateY(-1px);
+      box-shadow: 0 1px 3px rgba(60,64,67,0.1);
+    }
+
+    .nav-btn:active {
+      background: #e8f0fe;
+      transform: translateY(0);
+    }
+
+    /* Terminal/Code Example Style */
+    .terminal-box {
+      background: #f8f9fa;
+      color: #202124;
+      padding: 16px;
+      border-radius: 6px;
+      font-family: 'Roboto Mono', 'Courier New', monospace;
+      font-size: 0.65em;
+      line-height: 1.5;
+      margin-top: 15px;
+      border: 1px solid #dadce0;
+      box-shadow: none;
+      border-top: 1px solid #dadce0;
+    }
+    
+    .terminal-box::before {
+      display: none;
+    }
+
+    .terminal-prompt {
+      color: #137333;
+    }
+
+    .terminal-cmd {
+      color: #1a73e8;
+      font-weight: 600;
+    }
+
+    .terminal-output {
+      color: #5f6368;
+    }
+
+    .subtitle {
+      font-size: 0.65em;
+      color: #5f6368;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      display: block;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .text-sm {
+      font-size: 0.75em !important;
+      line-height: 1.6;
+      color: #3c4043;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75em;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0;
+      margin-right: 10px;
+    }
+
+    .bg-green {
+      background-color: #137333;
+    }
+
+    .bg-blue {
+      background-color: #1a73e8;
+    }
+
+    .bg-purple {
+      background-color: #9334e6;
+    }
+
+    .reveal-viewport {
+      background: #f8f9fa;
+    }
+
+    /* Global Home Button */
+    .home-btn {
+      position: fixed;
+      top: 40px;
+      right: 50px;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #1a73e8;
+      text-decoration: none;
+      text-transform: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      box-shadow: 0 1px 2px rgba(60,64,67,0.1);
+    }
+
+    .home-btn:hover {
+      opacity: 1 !important;
+      background: #f8fbfd;
+      border-color: #d2e3fc;
+      transform: translateY(-2px);
+    }
+
+    .home-btn:active {
+      background: #e8f0fe;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#/0" class="home-btn" id="home-link">HOME</a>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: Cover with Menu Navigation -->
+      <section>
+        <span class="subtitle">Khóa Không Tên Số 01 (Noname Course 01)</span>
+        <h1>AI CODING TOOLS</h1>
+        <h3 class="serif-quote" style="border: none; padding: 0; margin-top: 0; font-size: 1.5em; color: #444;">CLAUDE
+          CODE • GEMINI CLI • ANTIGRAVITY</h3>
+
+        <div class="nav-menu">
+          <a href="#/1" class="nav-btn">P1: Tổng quan</a>
+          <a href="#/3" class="nav-btn">P2: Kiến trúc</a>
+          <a href="#/6" class="nav-btn">P3: Vai trò</a>
+          <a href="#/7" class="nav-btn">P4: AntiGravity</a>
+          <a href="#/9" class="nav-btn">P5: Tips DA</a>
+          <a href="#/10" class="nav-btn">P6: MCP</a>
+          <a href="#/13" class="nav-btn">P7: Claude Code</a>
+        </div>
+
+        <p style="margin-top: 60px; font-size: 0.8em; color: #555;">
+          <strong>Đối tượng:</strong> OMD Data Analyst Team<br>
+          <span style="color: #999;">Update April 2026</span>
+        </p>
+      </section>
+
+      <!-- Slide 2: Phần 1 -->
+      <section>
+        <span class="subtitle">Phần 1: Kiến trúc tổng quan (Core Architecture)</span>
+        <h2>1. Autonomous Agent Xử Lý Data Như Thế Nào?</h2>
+        <p class="serif-quote">Các hệ thống AI này hoạt động qua giao diện <strong>CLI (Command Line
+            Interface)</strong>. Thay vì dùng giao diện kéo-thả truyền thống (GUI), bạn dùng lệnh văn bản để yêu cầu AI
+          tương tác trực tiếp với máy tính của mình.</p>
+        <p>Bản chất của loại Tool này là <strong>AI Tự Hành (Autonomous Agent)</strong>. Chỉ với một yêu cầu (prompt),
+          chúng sẽ tự động vạch kế hoạch, đọc file thư mục, tìm lỗi và tự viết code mà không cần bạn phải theo sát từng
+          bước. Điểm khác biệt lớn nhất giữa chúng nằm ở <strong>khả năng nhớ trạng thái Database</strong> và
+          <strong>Lưu Trí nhớ dài hạn (Memory Persistence)</strong>.
+        </p>
+        <div
+          style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 30px; line-height: 1.5;">
+          *Ý là: Không cần quan tâm tới "CLI" hay "Lưu trạng thái Node". Hệ thống Agent sẽ âm thầm lo các
+          việc xử lý kĩ thuật phía sau (background processing), Data Analyst chỉ việc cung cấp ngôn ngữ tự nhiên và theo
+          dõi quá trình chạy Data.
+          <br><br>
+          *Node (Điểm nút): Node là một bước xử lý, một trạm dừng hoặc một phân nhánh trong chuỗi tư duy giải quyết
+          vấn đề của AI.
+          <br><br>
+          *Lưu trạng thái (State): Là việc hệ thống có khả năng "ghi nhớ" toàn bộ bối cảnh, lỗi cũ, các biến số dữ liệu,
+          và kết quả của các bước xử lý trước đó.
+        </div>
+      </section>
+
+      <!-- Slide 3: 3 Công Cụ -->
+      <section>
+        <span class="subtitle">Phần 1: Kiến trúc tổng quan (Core Architecture)</span>
+        <h2>2. Bản chất cốt lõi của từng công cụ</h2>
+        <div class="grid-3" style="gap: 15px;">
+          <div class="card card-claude">
+            <h3 class="highlight-green">Claude Code</h3>
+            <p class="text-sm"><strong>Engine suy luận độc lập:</strong> Cực kỳ thông minh khi giải quyết các thuật toán
+              nhiều bước. Tuy nhiên, AI này <strong>không lưu trạng thái (Stateless)</strong>, tức là nó sẽ quên quy
+              chuẩn của dự án trừ khi bạn đưa cho nó một quyển "sổ tay" quy tắc (file tĩnh <code>CLAUDE.md</code>).</p>
+          </div>
+          <div class="card card-gemini">
+            <h3 class="highlight-blue">Gemini CLI</h3>
+            <p class="text-sm"><strong>Tương tác tức tốc (JIT Executor):</strong> Tối ưu cho tốc độ phản hồi cực nhanh.
+              Tuy nhiên hệ thống <strong>thiếu đi bộ nhớ dài hạn</strong>, nó hiểu câu lệnh ngữ cảnh hiện tại rất tốt
+              nhưng sẽ làm mới hoàn toàn trí nhớ khi bạn <strong>đóng cửa sổ Terminal</strong>.</p>
+          </div>
+          <div class="card card-anti">
+            <h3 class="highlight-purple">AntiGravity</h3>
+            <p class="text-sm"><strong>Hệ sinh thái kết hợp (Hybrid):</strong> Vừa có giao diện đẹp, vừa có sức mạnh
+              truy cập hệ thống. Sức mạnh tuyệt đối nằm ở <strong>Bộ nhớ tự học (Knowledge Items - KIs)</strong>, khả
+              năng vẽ biểu đồ trực quan (Artifacts) và tự lướt Web ẩn (Browser Subagent) để lấy dữ liệu.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: So sánh 1 -->
+      <section>
+        <span class="subtitle">Phần 2: Tiêu chí Kỹ thuật (Technical Metrics)</span>
+        <h2>3. Kiến trúc Hạ tầng & Cấu hình</h2>
+        <table>
+          <tr>
+            <th>Tiêu chí Đánh giá</th>
+            <th>Claude Code <span class="highlight-green">🟢</span></th>
+            <th>Gemini CLI <span class="highlight-blue">🔵</span></th>
+            <th>AntiGravity <span class="highlight-purple">🟣</span></th>
+          </tr>
+          <tr>
+            <td><strong>Lõi Mô hình (Vendor)</strong></td>
+            <td>Anthropic</td>
+            <td>Google</td>
+            <td class="highlight-purple">Google DeepMind</td>
+          </tr>
+          <tr>
+            <td><strong>Giao thức Giao diện (Interface)</strong></td>
+            <td>Chỉ gõ lệnh (Terminal CLI)</td>
+            <td>Chỉ gõ lệnh (Terminal CLI)</td>
+            <td class="highlight-purple">Kết hợp (Hybrid): Khung chat UI + Terminal ngầm</td>
+          </tr>
+          <tr>
+            <td><strong>Phạm vi Context Cục bộ</strong></td>
+            <td>Theo tệp <code>CLAUDE.md</code></td>
+            <td>Theo tệp <code>GEMINI.md</code></td>
+            <td class="highlight-purple">Ghép nối tệp <code>_GEMINI.md</code> cùng Cơ sở Kiến thức (KIs)</td>
+          </tr>
+          <tr>
+            <td><strong>Tệp Khởi tạo (Config Storage)</strong></td>
+            <td><code>~/.claude.json</code> tại từng thư mục</td>
+            <td><code>~/.gemini/</code></td>
+            <td class="highlight-purple">Lưu trữ tập trung: <code>&lt;AppData&gt;/.gemini/antigravity/</code></td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Slide 5: So sánh 2 -->
+      <section>
+        <span class="subtitle">Phần 2: Tiêu chí Kỹ thuật (Technical Metrics)</span>
+        <h2>4. Bộ nhớ (Memory) & Lịch sử</h2>
+        <table>
+          <tr>
+            <th>Tiêu chí Đánh giá</th>
+            <th>Claude Code <span class="highlight-green">🟢</span></th>
+            <th>Gemini CLI <span class="highlight-blue">🔵</span></th>
+            <th>AntiGravity <span class="highlight-purple">🟣</span></th>
+          </tr>
+          <tr>
+            <td><strong>Trí nhớ dài hạn (Long-term Context)</strong></td>
+            <td>🔶 Thủ công. Team phải tự nhập tay các lỗi đã gặp vào file tĩnh.</td>
+            <td>❌ Không có chế độ ghi nhớ ngoài từng phiên.</td>
+            <td class="highlight-purple">✅ Tự động trích lọc kinh nghiệm lỗi vào Kho tri thức (KIs).</td>
+          </tr>
+          <tr>
+            <td><strong>Lịch sử Phiên làm việc (Session)</strong></td>
+            <td>✅ Khởi tạo bộ đệm xem lại (Short-term cache logs).</td>
+            <td>❌ Mất hoàn toàn lịch sử hội thoại khi đóng Terminal.</td>
+            <td class="highlight-purple">✅ Sao lưu toàn bộ Log thao tác siêu chi tiết vào <code>overview.txt</code></td>
+          </tr>
+          <tr>
+            <td><strong>Mã định danh (Session UUID)</strong></td>
+            <td>✅ Có ID rõ ràng để tiếp tục luồng hội thoại cũ.</td>
+            <td>❌ Các phiên độc lập hoàn toàn.</td>
+            <td class="highlight-purple">✅ Quản lý từng dự án qua các ID mã hóa tĩnh (UUID) tách biệt.</td>
+          </tr>
+          <tr>
+            <td><strong>Phân Mức Độ Dò Ngữ Cảnh (Context Hierarchy)</strong></td>
+            <td>Chỉ đọc theo cây thư mục (Subfolder Tree).</td>
+            <td>Giới hạn trong những file nhỏ đang được xử lý..</td>
+            <td class="highlight-purple">Ưu tiên cấp bậc KIs → Log cũ → File Code hiện hành.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Slide 6: So sánh 3 -->
+      <section>
+        <span class="subtitle">Phần 2: Tiêu chí Kỹ thuật (Technical Metrics)</span>
+        <h2>5. Quy trình chạy (Execution) & Đầu ra</h2>
+        <table style="font-size: 0.8em;">
+          <tr>
+            <th>Tiêu chí Đánh giá</th>
+            <th>Claude Code <span class="highlight-green">🟢</span></th>
+            <th>Gemini CLI <span class="highlight-blue">🔵</span></th>
+            <th>AntiGravity <span class="highlight-purple">🟣</span></th>
+          </tr>
+          <tr>
+            <td><strong>Phân tác vụ (Orchestration)</strong></td>
+            <td>Tự động phân rã I/O lệnh trực tiếp trên máy.</td>
+            <td>Gọi API thẳng để biên dịch file độc lập.</td>
+            <td class="highlight-purple">Chạy đa nhiệm (Async), tự động replace nhiều dòng độc lập cực thông minh.</td>
+          </tr>
+          <tr>
+            <td><strong>Chuẩn tích hợp ngoài (MCP Protocol)</strong></td>
+            <td>✅ Tương thích mạnh mẽ (Là tác giả của chuẩn này).</td>
+            <td>🔶 Đang xây dựng dưới dạng thử nghiệm (Experimental).</td>
+            <td class="highlight-purple">✅ Tích hợp hoàn hảo thông qua <code>mcp_config.json</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>Báo cáo Giao diện (Artifacts UI)</strong></td>
+            <td>❌ Text Terminal khô khan (Một chiều).</td>
+            <td>❌ Text Terminal thuần túy (Một chiều).</td>
+            <td class="highlight-purple">✅ Render Carousel ảnh cuộn, biểu đồ Markdown và Bảng so sánh code màu đỏ/xanh
+              (Git Diff).</td>
+          </tr>
+          <tr>
+            <td><strong>Đọc hiểu Web (Browser Subagent)</strong></td>
+            <td>❌ Phải copy code HTML bằng tay mới hiểu nội dung Web.</td>
+            <td>❌ Không đọc được link Web ngoại lai.</td>
+            <td class="highlight-purple">✅ Tự bật Chrome vô hình, nhấp chuột và quay video (file <code>.webp</code>) quá
+              trình thao tác.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Slide 7: Vai trò -->
+      <section>
+        <span class="subtitle">Phần 3: Làm rõ Định Nghĩa (Concept Breakdown)</span>
+        <h2>6. AI Tự Hành vs Tool Auto-Gợi Ý Code (IDE Assist)</h2>
+        <p style="margin-bottom: 25px;">⚠️ Đừng nhầm lẫn giữa một <strong>AI Tự Hành (Autonomous Agent)</strong>
+          chuyên nghiệp và một <strong>Trợ lý gợi ý code trên phần mềm (IDE Code Assist)</strong>. Chúng thuộc hai phân
+          lớp phục vụ hoàn toàn khác nhau.</p>
+        <table style="font-size: 0.7em;">
+          <tr>
+            <th>Tiêu chí Phân định</th>
+            <th>AI Tự Hành (Autonomous Agent) [VD: Claude Code]</th>
+            <th>AI Trợ Lý Code (IDE Assist) [VD: Gemini Code Assist]</th>
+          </tr>
+          <tr>
+            <td><strong>Quy trình xử lý (Pipeline Model)</strong></td>
+            <td><strong>Vận hành toàn trình (E2E):</strong> Nhận 1 đề bài, tự mò dự án, tự chạy Terminal và Fix bug cho
+              tới khi Output hoàn chỉnh.</td>
+            <td><strong>Mớm thông tin cục bộ (Context Injection):</strong> Hiểu đoạn mã bạn đang tự viết tay, rồi đề
+              xuất hàm tự động điền nốt (Autocomplete) cho câu đó.</td>
+          </tr>
+          <tr>
+            <td><strong>Tính tương tác</strong></td>
+            <td>Giao nhiệm vụ xong, bạn có thể đi pha cafe và chờ tiến trình (Bất đồng bộ).</td>
+            <td>Như một trợ lý đúng nghĩa, bám theo thao tác gõ phím trực tiếp của bạn (Trực tiếp thời gian thực).</td>
+          </tr>
+          <tr>
+            <td><strong>Sức mạnh cốt lõi</strong></td>
+            <td class="highlight-green"><strong>Suy luận logic (Reasoning):</strong> Vạch thuật toán chính xác từ số 0,
+              tránh các lỗi sai vớ vẩn hệ thống.</td>
+            <td class="highlight-blue"><strong>Chứa bộ nhớ lớn (Massive Context Window):</strong> Đọc một lần cả nghìn
+              tệp Code, phù hợp nhất để review Code, bắt lỗi gõ sai biến.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Slide 8: AntiGravity 1 -->
+      <section>
+        <span class="subtitle">Phần 4: Sức mạnh AntiGravity (Platform Features)</span>
+        <h2>7. Sức mạnh AntiGravity (Phần 1)</h2>
+        <div class="grid-2">
+          <div>
+            <h3><span class="badge bg-purple">1</span> Chu Kỳ Vận Hành Tự Động (Autonomous Loop)</h3>
+            <ul class="text-sm">
+              <li><strong>Phân tích hệ thống (Planning Engine):</strong> Chia một bài toán Phân tích Data Data phức tạp
+                thành các mốc nhỏ thay vì đâm đầu vào code ngay.</li>
+              <li><strong>Tích hợp Hệ Thống Xử Lý:</strong> Tạo vòng lặp ngầm: Viết mã SQL ⟶ chạy qua terminal nội bộ ⟶
+                nếu Terminal chê lỗi, lấy thông báo về tự chữa lỗi ⟶ Giao file chuẩn cuối cùng cho bạn.</li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="badge bg-purple">2</span> Cơ Sở Kiến Thức (Knowledge Items - KIs)</h3>
+            <ul class="text-sm">
+              <li>Mỗi lần team DA chật vật sửa một lỗi SQL phức tạp, hệ thống tự lấy đó làm pattern để tạo ra file kỹ
+                năng <strong>KIs</strong> không thể tẩy xóa.</li>
+              <li>Lần sau gặp task tương tự, hệ thống tự truy nạp kho trí tuệ KIs này, không bao giờ lập lại lỗi 2 lần
+                hay phải để con người nhắc luật (Zero-shot bypass).</li>
+              <li>Hiểu bạn hơn cả nyc :)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: AntiGravity 2 -->
+      <section>
+        <span class="subtitle">Phần 4: Sức mạnh AntiGravity (Platform Features)</span>
+        <h2>8. Sức mạnh AntiGravity (Phần 2)</h2>
+        <div class="grid-2">
+          <div>
+            <h3><span class="badge bg-purple">3</span> Trình Duyệt Đi Thu Thập Ngầm (Browser Subagent)</h3>
+            <ul class="text-sm">
+              <li>Chạy một Trình duyệt Web Scraping chạy nền. AI tự thao tác cuộn chuột, Click nút, giải mã HTML của
+                trang web công ty thay vì bó tay.</li>
+              <li>Đặc biệt có khả năng quay nén phim màn hình (đuôi <code>.webp</code>) cho toàn bộ thao tác, nhằm đảm
+                bảo minh bạch (Audit Trails) cho dự án.</li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="badge bg-purple">4</span> Sinh Các Bảng Tương Tác (Artifact Engine)</h3>
+            <ul class="text-sm">
+              <li>Không ném hàng nghìn chữ thẳng vào mắt User. Biến Schema bảng Database phức tạp thành Sơ Đồ Thiết Kế
+                chuẩn (Mermaid Vector Diagrams) cực dễ nhìn.</li>
+              <li>Kích hoạt tính năng Diff Block: Bóc tách mảng nào bị xóa (Đỏ) và thêm mới (Xanh Lá) rành mạch, thuận
+                lợi bắt bệnh mà không cần mò mẫn thay vì soi mỏi mắt.</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 20px;">
+          *Tự kêu Agent cho ví dụ về các loại Artifact đẹp thử nhé, nhiều. Nói chung AntiGravity nó có nhiều cái hay
+          (vc, chổ này nó tự gen).
+        </div>
+      </section>
+
+      <!-- Slide 10: Tips DA -->
+      <section>
+        <span class="subtitle">Phần 5: Bí quyết áp dụng công việc (Practical Tips)</span>
+        <h2>9. Tips cho Ngữ Cảnh</h2>
+        <div style="background: #fafafa; padding: 25px; border-radius: 8px; border: 1px solid #ddd;">
+          <ul style="margin:0; padding-left: 20px; font-size: 0.85em; line-height: 1.7;">
+            <li>💡 <strong>Prompt yêu cầu Cao:</strong> AI mặc định thiết kế khá đơn điệu. Hãy ép AI tạo UI xịn
+              bằng bộ lệnh: <em>"Apply UI: Premium contrast palette, European Typography Inter font, Dynamic state
+                transitions"</em> đồ họa của slide slide hay report sẽ lập tức trông rất chuyên nghiệp.</li>
+            <li>💡 <strong>Cập Nhật Trí Khôn KIs Thủ Công:</strong> Nếu ra được mảng biểu đồ rất tối ưu, hãy ra lệnh
+              luôn: "Lưu pattern biểu đồ chuẩn này vào KIs Library cho dự án sau."</li>
+            <li>💡 <strong>File hướng dẫn _GEMINI.md trong project:</strong> Đặt file <code>_GEMINI.md</code> ở thư mục
+              gốc (root directory) project của team với mô tả: cấu trúc thư mục, naming convention (quy ước đặt tên),
+              tool thường dùng. AntiGravity sẽ đọc file này ngay khi mở project và làm việc đúng context (ngữ cảnh).
+            </li>
+            <li>⚠️ <strong>Không BYOK (Bring Your Own Key — tự mang API key):</strong> AntiGravity hiện không hỗ
+              trợ đổi
+              model (mô hình AI) tùy ý vì các khả năng Agentic (tool-calling, browser subagent...) được Google
+              DeepMind huấn luyện riêng trên các model tích hợp sẵn (built-in). Bạn vẫn có thể viết code gọi API bất
+              kỳ — nhưng AntiGravity (agent) chỉ chạy trên bộ model được tích hợp..</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Slide 11: Ecosystem 1 -->
+      <section>
+        <span class="subtitle">Phần 6: MCP - MODEL CONTEXT PROTOCOL LÀ GÌ</span>
+        <h2>10. MCP (Model Context Protocol)</h2>
+        <p class="serif-quote highlight-blue" style="border-left-color: #1565c0; font-size: 1.15em;">"MCP (Model Context
+          Protocol — Giao thức Ngữ cảnh Mô hình) giống như ổ cắm điện chuẩn quốc tế. Nhà sản xuất thiết bị (quạt, tủ
+          lạnh, laptop...) chỉ cần làm cái phích cắm đúng chuẩn — thì cắm vào ổ điện nước nào cũng chạy được. Không cần
+          hỏi ổ điện đó của hãng nào."</p>
+        <p><strong>Bản chất:</strong> MCP là chuẩn giao tiếp mở (open standard) do Anthropic tạo ra, cho phép AI Agent
+          (tác tử AI) “cắm vào” bất kỳ công cụ/dịch vụ bên ngoài nào — miễn là công cụ đó “chìa ra” một MCP Server (máy
+          chủ MCP).</p>
+      </section>
+
+      <!-- Slide 12: Ecosystem 2 -->
+      <section>
+        <span class="subtitle">Phần 6: Khớp Nối Tool Doanh Nghiệp (Tooling Ecosystem)</span>
+        <h2>11. Mô Phỏng Các Hệ Khớp Nối MCP</h2>
+        <table style="font-size: 0.65em;">
+          <tr>
+            <th>Application Server (Nền Tảng Đích)</th>
+            <th>Cung Cấp Chức năng (Exposed API Endpoints)</th>
+            <th>Trường Hợp Ứng Dụng Đời Thực (Usecases)</th>
+          </tr>
+          <tr>
+            <td><strong>Google BigQuery Server</strong></td>
+            <td><code>query_data(), retrieve_schema()</code><br><span style="color:#777">Phân tích Data Schema Trực
+                quan</span></td>
+            <td>Tự động Mapping các cấu trúc bảng, query tìm doanh thu theo khung giờ về hệ máy local.</td>
+          </tr>
+          <tr>
+            <td><strong>GMAIL</strong></td>
+            <td><code>send_email(), read_email(), search_email()</code><br><span style="color:#777">Quản lý mail</span>
+            </td>
+            <td>AI tóm tắt nội dung email, trả lời tự động, gửi báo cáo định kỳ.</td>
+          </tr>
+          <tr>
+            <td><strong>Github</strong></td>
+            <td><code>read_repo(), write_repo(), create_pull_request()</code><br><span style="color:#777">Quản lý
+                Repository</span>
+            </td>
+            <td>AI tự commit code, tạo PR, review code, merge code.</td>
+          </tr>
+          <tr>
+            <td><strong>Brave Search</strong></td>
+            <td><code>web_scrape_engine()</code><br><span style="color:#777">Tự động tìm kiếm web</span></td>
+            <td>AI tự tìm kiếm web, không cần bạn copy-paste
+            </td>
+          </tr>
+        </table>
+        <div
+          style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 20px;">
+          *Ý là: Các yếu tố như "TCP Hooks" hay "Vector Arrays" là cấu hình ngầm System, DA chúng ta không
+          cần gõ hay thao tác chúng bao giờ. Hãy hiểu đơn giản là: MCP giúp AI "giơ tay" mượn tạm Data BigQuery và "giơ
+          tay" gửi tin nhắn Slack cho Team thay DA làm.
+        </div>
+      </section>
+
+      <!-- Slide 13: Workflow MCP -->
+      <section>
+        <span class="subtitle">Phần 6: Quy Trình Tự Động Hóa Toàn Trình (End-to-End)</span>
+        <h2>12. Mô phỏng Kiến Trúc Hệ Sinh Thái MCP</h2>
+        <div class="card" style="border: 2px solid #6a1b9a;">
+          <p class="text-sm">🗣️ Trigger từ người dùng: <em>"Truy xuất kho Google BigQuery chỉ số Volume Q3, viết mã
+              Python xuất Graph Analysis ra ảnh và dán tự động vào kho lưu trữ Notion."</em></p>
+          <ul class="text-sm" style="list-style: none; padding-left: 0; margin-top:20px;">
+            <li style="margin-bottom: 12px;">✅ <strong>Bước 1 - Khởi chạy:</strong> Tác Tử liên kết API Server của MCP
+              BigQuery, vượt bảo mật, rút Matrix Data thô cần thiết.</li>
+            <li style="margin-bottom: 12px;">✅ <strong>Bước 2 - Khối Chuyển Đổi Model:</strong> Mở thư viện Native
+              Python matplotlib ngầm, dựng ma trận hình ảnh Biểu đồ sắc nét để kết xuất tệp đồ họa.</li>
+            <li>✅ <strong>Bước 3 - Cập Bến:</strong> Xác thực kết nối qua mạng với Notion API System Server, Up File
+              thành Report khép kín chuẩn chỉ. <strong>(Tự Động Hóa 0% hao hụt người).</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PHẦN 7: THỰC CHIẾN MỞ RỘNG (CLAUDE CODE) -->
+
+      <!-- Slide 14: Header Phần 7 -->
+      <section data-background="#6a1b9a">
+        <h1 style="color: white; border: none; font-size: 3em;">PART 7</h1>
+        <h2 style="color: white; border-color: white;">Nâng Cao: Giải Mã Mảng Lệnh Claude Code</h2>
+        <p style="color: rgba(255,255,255,0.7);">Sử dụng lệnh tắt hỗ trợ ngữ cảnh, thiết lập ranh giới làm việc
+          (Workspace Policy) và Kích hoạt tự động hóa vòng đời (Hooks).</p>
+      </section>
+
+      <!-- Slide 15: Bài 1 - /compact (Tính năng nâng cao) -->
+      <section>
+        <span class="subtitle">Phần 7 — Module 1: Xoá Đệm Nhớ Hệ Thống</span>
+        <h2>13. <code>/compact</code></h2>
+        <p>Bản chất kỹ thuật là <strong>Thu Gọn Số Lượng Token (Token Compaction)</strong>, làm sạch bộ nhớ để mô hình
+          không tốn công đọc các thông báo rác không quan trọng. Ý là:nén (tóm tắt) lịch sử hội thoại, tốn ít token hơn,
+          AI bớt ngu. CLAUDE 2026 có tính năng AUTO-COMPACT nhưng bị chửi lắm, khuyên là <strong>hãy compact trước khi
+            bị
+            auto-compact.</strong></p>
+        <div class="grid-2" style="gap: 15px;">
+          <div class="card" style="padding: 20px;">
+            <p class="text-sm" style="margin-bottom: 5px;"><strong>1. Focus Compaction (Nén tái định hướng trọng
+                số)</strong></p>
+            <div class="terminal-box" style="margin-top: 0; padding: 10px;">
+              <span class="terminal-cmd">/compact Tập trung vào logic tính doanh thu theo tháng, bỏ qua các lỗi cài đặt
+                môi trường vừa rồi</span>
+            </div>
+            <p class="text-sm" style="margin-top: 8px;">30 phút cãi nhau với AI để cài đặt một cái thư viện bị lỗi. Bây
+              giờ lỗi đã xong, bạn muốn bắt đầu viết code chính, nhưng bộ não của AI đang bị "rác" bởi cả đống thông báo
+              lỗi vớ vẩn nãy giờ => COMPACT. <strong>Kết quả: </strong>Bộ nhớ của nó bây giờ "sạch" và dồn 100% công
+              lực vào việc tính toán.</p>
+          </div>
+          <div class="card" style="padding: 20px;">
+            <p class="text-sm" style="margin-bottom: 5px;"><strong>2. Milestone Compaction (Nén chốt chặn hoàn
+                thành)</strong></p>
+            <div class="terminal-box" style="margin-top: 0; padding: 10px;">
+              <span class="terminal-cmd">/compact Chốt: Đã làm xong API đăng nhập và đăng ký. Bây giờ chuyển sang làm
+                tính năng quên mật khẩu.</span>
+            </div>
+            <p class="text-sm" style="margin-top: 8px;"><strong>Mục đích: </strong>Xả bộ nhớ để máy chạy nhanh hơn
+              nhưng vẫn giữ lại "kết quả cuối cùng" để làm bước tiếp theo. <strong>Kết quả: </strong>AI dọn dẹp toàn bộ
+              code nháp, các
+              câu hỏi phụ trong quá trình làm API. Nó chỉ ghi chú lại một dòng trong bộ nhớ: "API Login/Register: OK" =>
+              Giờ nó có rất nhiều khoảng trống để suy nghĩ cho tính năng "Quên mật khẩu".</p>
+          </div>
+        </div>
+        <p class="text-sm" style="margin-top: 15px;"><strong>💡 Nhận biết:</strong> Khi AI bị ngu, mắc chứng Ảo Giác
+          Thuật Toán (Hallucination) do giới hạn Tokens Memory.</p>
+      </section>
+
+      <!-- Slide 15b: Phân biệt các lệnh -->
+      <section>
+        <span class="subtitle">Phần 7 — Module 1: Quản Trị Terminal Trực Tiếp</span>
+        <h2>14. Commands Thông Dụng</h2>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Trigger</th>
+            <th>Usecase</th>
+          </tr>
+          <tr>
+            <td><strong><span class="highlight-green">/review</span></strong></td>
+            <td>Tự phản biện (Self-Correction)</td>
+            <td>Kích hoạt chế độ kiểm tra toàn diện, giúp AI rà soát lỗi, lỗ hổng bảo mật, hoặc các vấn đề tuân thủ
+              trong code hoặc quy trình làm việc.</td>
+          </tr>
+          <tr>
+            <td><strong><span class="highlight-blue">/explain</span></strong></td>
+            <td>Giải thích & Phân tích (Explain & Analyze)</td>
+            <td>Kích hoạt chế độ phân tích sâu, giúp AI giải thích các đoạn code phức tạp hoặc logic hệ thống rắc rối
+              thành ngôn ngữ dễ hiểu, hỗ trợ quá trình học tập và gỡ lỗi.</td>
+          </tr>
+          <tr>
+            <td><strong><span class="highlight-purple">/rewind</span></strong></td>
+            <td>Trục xuất Lỗi (Rollback)</td>
+            <td>Mô phỏng Undo Memory Version State. Khôi phục tình trạng bộ đệm Mô Hình trước khi Commit Logic sai hỏng
+              làm lag Context, an toàn và dễ làm.</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Slide 16: Bài 2 - .claude Folder -->
+      <section>
+        <span class="subtitle">Phần 7 — Module 2: Lớp Thiết Lập Môi Trường Workspace</span>
+        <h2>15. Định vị Workspace Policy qua Folder <code>.claude</code></h2>
+        <p>Thiết quân luật, ép LLM tuân thủ.</p>
+        <div class="terminal-box" style="font-size: 0.55em;">
+          <span style="color: #6a9955;">.claude/rules.md</span><br>
+          - Bắt buộc phải Output kiểu <span style="color: #ce9178;">snake_case</span> parameters.<br>
+          - Xuất File Validation Data Data Schema chuẩn mực vào File <span style="color: #ce9178;">.csv</span> container
+          objects format.<br>
+          <br>
+          <span style="color: #6a9955;">.claude/memory.json</span><br>
+          { "last_exception_catch": "Backend Network BigQuery Protocol Timeout", "resolution_injection": "Append LIMIT
+          100 clauses to Root Nodes" }<br>
+          <br>
+          <span style="color: #6a9955;">.claude/skills.json</span><br>
+          Khi thực hiện deploy, hãy chạy lệnh npm run build, kiểm tra thư mục dist, sau đó thực hiện git add ., git
+          commit -m 'deploy' và git push. Cuối cùng, hãy cung cấp link GitHub Pages cho tôi.<br>
+          <br>
+          <span style="color: #6a9955;">.claude/agents.json</span><br>
+          Bạn là một tester khó tính. Nhiệm vụ của bạn là chạy thử mọi dòng code tôi vừa viết, tìm ra các trường hợp
+          biên (edge cases) có thể làm sập web. Bạn không được khen code, chỉ được tìm lỗi.
+        </div>
+        <p class="text-sm" style="margin-top: 15px;">Khởi động cơ chế "Ép hiểu luật mới cho gõ phím". AI sẽ đọc System
+          Metadata Policy trước tiên khi bạn ra lệnh, chặn việc đi lệch hướng ngay từ đầu. Phân cấp: Nghiên cứu mới (có
+          thứ tự ưu tiên rõ ràng) → Logs cũ → KIs</p>
+      </section>
+
+      <!-- Slide 17: Bài 3 - Slash Commands -->
+      <section>
+        <span class="subtitle">Phần 7 — Module 3: Tính năng Slash Commands</span>
+        <h2>16. Giao thức Lệnh Slash (Slash Commands Endpoints)</h2>
+        <p>Bypass Prompt System dài dòng bằng đường tắt (In-memory triggers) tối ưu Token Stream API.</p>
+        <div class="grid-2">
+          <div class="card" style="border-top-color: #000;">
+            <h3><code>/cost</code></h3>
+            <p class="text-sm">Hiển thị Giám sát Bill (Monitoring Metric API).</p>
+            <div class="terminal-box" style="margin-top:5px; padding:10px;">
+              <span class="terminal-output">Billing Core Output: $0.45 Authored Response Tokens Evaluated (Current
+                Session)</span>
+            </div>
+          </div>
+          <div class="card" style="border-top-color: #f00;">
+            <h3><code>/bug</code></h3>
+            <p class="text-sm">Tiền kiểm lỗi (Static Compiler Linter/Pre-check).</p>
+            <div class="terminal-box" style="margin-top:5px; padding:10px;">
+              <span class="terminal-output">Lỗi ở dòng 4: Bạn đang JOIN bảng User nhưng thiếu điều kiện ON.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 18: Bài 4 - Hooks -->
+      <section>
+        <span class="subtitle">Phần 7 — Module 4: Xử Lý Nền tự động hóa với Hooks</span>
+        <h2>17. Listeners Hooks (Hàm Lắng Nghe Sự Kiện)</h2>
+        <p>Gắn Script dọn dẹp Code và Bíp sau khi Agent chạy xong.</p>
+        <div class="terminal-box" style="font-size: 0.6em;">
+          <span style="color: #6a9955;">.claude/hooks.json</span><br>
+          {<br>
+          &nbsp;&nbsp;"post-save": "sql-formatter --write",<br>
+          &nbsp;&nbsp;"post-run": "powershell -c \"([System.Media.SystemSounds]::Exclamation).Play()\""<br>
+          }
+        </div>
+        <div class="card" style="margin-top:20px;">
+          <p class="text-sm"><strong>"post-save"</strong> End-of-Stream, tự dưng mã
+            Agent sinh SQL xong. Bạn chả cần làm gì, nền tảng bắn Process Pipeline (Terminal Script) kích chạy công cụ
+            căn chỉnh Formats (<code>sql-formatter</code>). Trả ra Codebase vuông vức, sạch chuẩn mà chả tốn 10 giây
+            Manual Human Interaction. Xong <strong>"post-run"</strong> nó làm kêu lên 1 tiếng "Bíp" để báo hiệu (Nhớ bật
+            loa).</p>
+        </div>
+      </section>
+
+      <!-- Slide 19: Cảm ơn -->
+      <section>
+        <h1 style="text-align: center; font-size: 3.5em; letter-spacing: 0.1em; margin-bottom: 10px;">THANK YOU</h1>
+        <p style="text-align: center; color: #777; font-size: 0.8em; font-weight: 600; text-transform: uppercase;">Road
+          to Agentic Data Analyst - 2026
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      transition: 'fade', // Chuyển cảnh mượt mà thanh lịch, không màu mè chói mắt
+      backgroundTransition: 'fade',
+      width: 1100,
+      height: 700,
+      margin: 0.12,
+      minScale: 0.2,
+      maxScale: 2.0
+    });
+
+    // Xử lý ẩn/hiện nút HOME
+    const homeBtn = document.getElementById('home-link');
+    Reveal.on('slidechanged', event => {
+      if (event.indexh === 0) {
+        homeBtn.style.opacity = '0';
+        homeBtn.style.pointerEvents = 'none';
+      } else {
+        homeBtn.style.opacity = '1';
+        homeBtn.style.pointerEvents = 'auto';
+      }
+    });
+  </script>
+</body>
+
+</html>
