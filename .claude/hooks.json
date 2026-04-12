@@ -1,0 +1,3 @@
+{
+  "post-run": "powershell -c \"([System.Media.SystemSounds]::Exclamation).Play()\""
+}

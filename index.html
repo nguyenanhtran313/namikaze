@@ -332,8 +332,8 @@
           CODE • GEMINI CLI • ANTIGRAVITY</h3>
 
         <div class="nav-menu">
-          <a href="#/1" class="nav-btn">P1: Nền tảng</a>
-          <a href="#/3" class="nav-btn">P2: So sánh</a>
+          <a href="#/1" class="nav-btn">P1: Tổng quan</a>
+          <a href="#/3" class="nav-btn">P2: Kiến trúc</a>
           <a href="#/6" class="nav-btn">P3: Vai trò</a>
           <a href="#/7" class="nav-btn">P4: AntiGravity</a>
           <a href="#/9" class="nav-btn">P5: Tips DA</a>
@@ -354,16 +354,22 @@
         <p class="serif-quote">Các hệ thống AI này hoạt động qua giao diện <strong>CLI (Command Line
             Interface)</strong>. Thay vì dùng giao diện kéo-thả truyền thống (GUI), bạn dùng lệnh văn bản để yêu cầu AI
           tương tác trực tiếp với máy tính của mình.</p>
-        <p>Bản chất của loại Tool này là <strong>AI Tự Động (Autonomous Agent)</strong>. Chỉ với một yêu cầu (prompt),
+        <p>Bản chất của loại Tool này là <strong>AI Tự Hành (Autonomous Agent)</strong>. Chỉ với một yêu cầu (prompt),
           chúng sẽ tự động vạch kế hoạch, đọc file thư mục, tìm lỗi và tự viết code mà không cần bạn phải theo sát từng
           bước. Điểm khác biệt lớn nhất giữa chúng nằm ở <strong>khả năng nhớ trạng thái Database</strong> và
           <strong>Lưu Trí nhớ dài hạn (Memory Persistence)</strong>.
         </p>
         <div
-          style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 30px;">
-          *Chú thích từ DA: Không cần quan tâm tới "CLI" hay "Lưu trạng thái Node". Hệ thống Agent sẽ âm thầm lo các
+          style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 30px; line-height: 1.5;">
+          *Ý là: Không cần quan tâm tới "CLI" hay "Lưu trạng thái Node". Hệ thống Agent sẽ âm thầm lo các
           việc xử lý kĩ thuật phía sau (background processing), Data Analyst chỉ việc cung cấp ngôn ngữ tự nhiên và theo
           dõi quá trình chạy Data.
+          <br><br>
+          *Node (Điểm nút): Node là một bước xử lý, một trạm dừng hoặc một phân nhánh trong chuỗi tư duy giải quyết
+          vấn đề của AI.
+          <br><br>
+          *Lưu trạng thái (State): Là việc hệ thống có khả năng "ghi nhớ" toàn bộ bối cảnh, lỗi cũ, các biến số dữ liệu,
+          và kết quả của các bước xử lý trước đó.
         </div>
       </section>
 
@@ -382,7 +388,7 @@
             <h3 class="highlight-blue">Gemini CLI</h3>
             <p class="text-sm"><strong>Tương tác tức tốc (JIT Executor):</strong> Tối ưu cho tốc độ phản hồi cực nhanh.
               Tuy nhiên hệ thống <strong>thiếu đi bộ nhớ dài hạn</strong>, nó hiểu câu lệnh ngữ cảnh hiện tại rất tốt
-              nhưng sẽ làm mới hoàn toàn trí nhớ khi bạn đóng cửa sổ Terminal.</p>
+              nhưng sẽ làm mới hoàn toàn trí nhớ khi bạn <strong>đóng cửa sổ Terminal</strong>.</p>
           </div>
           <div class="card card-anti">
             <h3 class="highlight-purple">AntiGravity</h3>
@@ -395,7 +401,7 @@
 
       <!-- Slide 4: So sánh 1 -->
       <section>
-        <span class="subtitle">Phần 2: So sánh tiêu chí Kỹ thuật (Technical Metrics)</span>
+        <span class="subtitle">Phần 2: Tiêu chí Kỹ thuật (Technical Metrics)</span>
         <h2>3. Kiến trúc Hạ tầng & Cấu hình</h2>
         <table>
           <tr>
@@ -433,7 +439,7 @@
 
       <!-- Slide 5: So sánh 2 -->
       <section>
-        <span class="subtitle">Phần 2: So sánh tiêu chí Kỹ thuật (Technical Metrics)</span>
+        <span class="subtitle">Phần 2: Tiêu chí Kỹ thuật (Technical Metrics)</span>
         <h2>4. Bộ nhớ (Memory) & Lịch sử</h2>
         <table>
           <tr>
@@ -471,7 +477,7 @@
 
       <!-- Slide 6: So sánh 3 -->
       <section>
-        <span class="subtitle">Phần 2: So sánh tiêu chí Kỹ thuật (Technical Metrics)</span>
+        <span class="subtitle">Phần 2: Tiêu chí Kỹ thuật (Technical Metrics)</span>
         <h2>5. Quy trình chạy (Execution) & Đầu ra</h2>
         <table style="font-size: 0.8em;">
           <tr>
@@ -512,8 +518,8 @@
       <!-- Slide 7: Vai trò -->
       <section>
         <span class="subtitle">Phần 3: Làm rõ Định Nghĩa (Concept Breakdown)</span>
-        <h2>6. Phân định: AI Tự Động Toàn Trình vs Tool Auto-Gợi Ý Code (IDE Assist)</h2>
-        <p style="margin-bottom: 25px;">⚠️ Đừng nhầm lẫn giữa một <strong>Hệ thống tự động (Autonomous Agent)</strong>
+        <h2>6. AI Tự Hành vs Tool Auto-Gợi Ý Code (IDE Assist)</h2>
+        <p style="margin-bottom: 25px;">⚠️ Đừng nhầm lẫn giữa một <strong>AI Tự Hành (Autonomous Agent)</strong>
           chuyên nghiệp và một <strong>Trợ lý gợi ý code trên phần mềm (IDE Code Assist)</strong>. Chúng thuộc hai phân
           lớp phục vụ hoàn toàn khác nhau.</p>
         <table style="font-size: 0.7em;">
@@ -546,8 +552,8 @@
 
       <!-- Slide 8: AntiGravity 1 -->
       <section>
-        <span class="subtitle">Phần 4: Vũ khí của Nền tảng (Platform Features)</span>
-        <h2>7. Kiến trúc sức mạnh AntiGravity (Phần 1)</h2>
+        <span class="subtitle">Phần 4: Sức mạnh AntiGravity (Platform Features)</span>
+        <h2>7. Sức mạnh AntiGravity (Phần 1)</h2>
         <div class="grid-2">
           <div>
             <h3><span class="badge bg-purple">1</span> Chu Kỳ Vận Hành Tự Động (Autonomous Loop)</h3>
@@ -565,6 +571,7 @@
                 năng <strong>KIs</strong> không thể tẩy xóa.</li>
               <li>Lần sau gặp task tương tự, hệ thống tự truy nạp kho trí tuệ KIs này, không bao giờ lập lại lỗi 2 lần
                 hay phải để con người nhắc luật (Zero-shot bypass).</li>
+              <li>Hiểu bạn hơn cả nyc :)</li>
             </ul>
           </div>
         </div>
@@ -572,8 +579,8 @@
 
       <!-- Slide 9: AntiGravity 2 -->
       <section>
-        <span class="subtitle">Phần 4: Vũ khí của Nền tảng (Platform Features)</span>
-        <h2>8. Kiến trúc sức mạnh AntiGravity (Phần 2)</h2>
+        <span class="subtitle">Phần 4: Sức mạnh AntiGravity (Platform Features)</span>
+        <h2>8. Sức mạnh AntiGravity (Phần 2)</h2>
         <div class="grid-2">
           <div>
             <h3><span class="badge bg-purple">3</span> Trình Duyệt Đi Thu Thập Ngầm (Browser Subagent)</h3>
@@ -596,44 +603,46 @@
         </div>
         <div
           style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 20px;">
-          *Chú thích từ DA: Diff Block (Màu đỏ/Màu xanh lá) là cách màn hình soi cho ta thấy: Trước đây AI viết lệnh
-          JOIN bảng bị sai (khoanh đỏ), ngay dòng dưới là lệnh JOIN mới được thay (màu xanh lá). Rất dễ Review bằng mắt
-          thường mà không phải là dân Code cứng.
+          *Tự kêu Agent cho ví dụ về các loại Artifact đẹp thử nhé, nhiều. Nói chung AntiGravity nó có nhiều cái hay
+          (vc, chổ này nó tự gen).
         </div>
       </section>
 
       <!-- Slide 10: Tips DA -->
       <section>
         <span class="subtitle">Phần 5: Bí quyết áp dụng công việc (Practical Tips)</span>
-        <h2>9. Các Tips Tinh chỉnh Ngữ Cảnh Dành Cho DA Team</h2>
+        <h2>9. Tips cho Ngữ Cảnh</h2>
         <div style="background: #fafafa; padding: 25px; border-radius: 8px; border: 1px solid #ddd;">
           <ul style="margin:0; padding-left: 20px; font-size: 0.85em; line-height: 1.7;">
-            <li>💡 <strong>Chèn Keyword Đồ Họa Cấp Cao:</strong> AI mặc định thiết kế khá đơn điệu. Hãy ép AI tạo UI xịn
+            <li>💡 <strong>Prompt yêu cầu Cao:</strong> AI mặc định thiết kế khá đơn điệu. Hãy ép AI tạo UI xịn
               bằng bộ lệnh: <em>"Apply UI: Premium contrast palette, European Typography Inter font, Dynamic state
                 transitions"</em> đồ họa của slide slide hay report sẽ lập tức trông rất chuyên nghiệp.</li>
             <li>💡 <strong>Cập Nhật Trí Khôn KIs Thủ Công:</strong> Nếu ra được mảng biểu đồ rất tối ưu, hãy ra lệnh
               luôn: "Lưu pattern biểu đồ chuẩn này vào KIs Library cho dự án sau."</li>
-            <li>💡 <strong>Lưu Trữ Context Vĩnh Viễn (Workspace root):</strong> Cẩm nang của Data Team cần được nhét vào
-              file tĩnh <code>_GEMINI.md</code> đặt ở gốc folder dự án. AI sẽ không bao giờ sai quy tắc Tiêu chuẩn
-              Naming Parameters của Leader đề ra.</li>
-            <li>⚠️ <strong>Tuyệt đối không mang API ngoài vào tự đổi (BYOK Warning):</strong> Tính năng phân tán của
-              DeepMind Agentic chỉ tối ưu cực đại khi chạy qua Engine tích hợp sẵn. Mang Token API cá nhân vào ép chạy
-              sẽ phá vỡ toàn bộ cấu trúc kết nối Tool của Agent.</li>
+            <li>💡 <strong>File hướng dẫn _GEMINI.md trong project:</strong> Đặt file <code>_GEMINI.md</code> ở thư mục
+              gốc (root directory) project của team với mô tả: cấu trúc thư mục, naming convention (quy ước đặt tên),
+              tool thường dùng. AntiGravity sẽ đọc file này ngay khi mở project và làm việc đúng context (ngữ cảnh).
+            </li>
+            <li>⚠️ <strong>Không BYOK (Bring Your Own Key — tự mang API key):</strong> AntiGravity hiện không hỗ
+              trợ đổi
+              model (mô hình AI) tùy ý vì các khả năng Agentic (tool-calling, browser subagent...) được Google
+              DeepMind huấn luyện riêng trên các model tích hợp sẵn (built-in). Bạn vẫn có thể viết code gọi API bất
+              kỳ — nhưng AntiGravity (agent) chỉ chạy trên bộ model được tích hợp..</li>
           </ul>
         </div>
       </section>
 
       <!-- Slide 11: Ecosystem 1 -->
       <section>
-        <span class="subtitle">Phần 6: Giao thức Máy Mở (Open Protocols)</span>
-        <h2>10. Kiến trúc Phổ quát MCP (Model Context Protocol)</h2>
-        <p class="serif-quote highlight-blue" style="border-left-color: #1565c0; font-size: 1.15em;">"MCP hoạt động như
-          ổ cắm chuyển đổi đa năng, giúp bộ xử lý trần trụi của Trại AI (LLMs) móc mượt mà với Kho Lưu Trữ Dữ Liệu
-          (Warehouse) của cty."</p>
-        <p><strong>Bản chất Technical:</strong> Khác với hồi AI bị nhốt trong lồng Sandbox chỉ biết đọc Chat, chuẩn Mở
-          MCP (thông qua JSON-RPC Context API) đã cho AI một đôi bàn tay để nối đến Cổng Server máy khách. Kết quả: AI
-          có thể chủ động đào dữ liệu từ Kho BigQuery, gửi biến cảnh báo vượt quá KPI lên thẳng Slack nội bộ hay chèn
-          File Report vào nền tảng Notion của Team.</p>
+        <span class="subtitle">Phần 6: MCP - MODEL CONTEXT PROTOCOL LÀ GÌ</span>
+        <h2>10. MCP (Model Context Protocol)</h2>
+        <p class="serif-quote highlight-blue" style="border-left-color: #1565c0; font-size: 1.15em;">"MCP (Model Context
+          Protocol — Giao thức Ngữ cảnh Mô hình) giống như ổ cắm điện chuẩn quốc tế. Nhà sản xuất thiết bị (quạt, tủ
+          lạnh, laptop...) chỉ cần làm cái phích cắm đúng chuẩn — thì cắm vào ổ điện nước nào cũng chạy được. Không cần
+          hỏi ổ điện đó của hãng nào."</p>
+        <p><strong>Bản chất:</strong> MCP là chuẩn giao tiếp mở (open standard) do Anthropic tạo ra, cho phép AI Agent
+          (tác tử AI) “cắm vào” bất kỳ công cụ/dịch vụ bên ngoài nào — miễn là công cụ đó “chìa ra” một MCP Server (máy
+          chủ MCP).</p>
       </section>
 
       <!-- Slide 12: Ecosystem 2 -->
@@ -650,27 +659,31 @@
             <td><strong>Google BigQuery Server</strong></td>
             <td><code>query_data(), retrieve_schema()</code><br><span style="color:#777">Phân tích Data Schema Trực
                 quan</span></td>
-            <td>Tự động Mapping các cấu trúc bảng lạ, nhúng lệnh SQL tìm doanh thu MKT theo khung giờ trực tiếp từ Kho
-              BigQuery về hệ máy nội bộ làm Data Analytics.</td>
+            <td>Tự động Mapping các cấu trúc bảng, query tìm doanh thu theo khung giờ về hệ máy local.</td>
           </tr>
           <tr>
-            <td><strong>Slack Notification API</strong></td>
-            <td><code>post_channel_webhook(), stream_media()</code><br><span style="color:#777">Bắn thông báo
-                Asynchronous Slack</span></td>
-            <td>Khi System báo KPI chệch quỹ đạo quá cảnh báo ngầm, AI kết nối cổng Slack gửi báo động cực mạnh tag
-              riêng tên Leader dự án.</td>
+            <td><strong>GMAIL</strong></td>
+            <td><code>send_email(), read_email(), search_email()</code><br><span style="color:#777">Quản lý mail</span>
+            </td>
+            <td>AI tóm tắt nội dung email, trả lời tự động, gửi báo cáo định kỳ.</td>
           </tr>
           <tr>
-            <td><strong>Brave Search / Local Filesystem</strong></td>
-            <td><code>web_scrape_engine() / read_write_dir()</code><br><span style="color:#777">Tự động Tracking Lịch Sử
-                Excel</span></td>
-            <td>Bỏ qua công đoạn con người phải thao tác Copy-Paste. AI tự đọc CSV Local rà soát File Logs Data tĩnh và
-              tiến hành thay đổi Content theo batch độc lập.</td>
+            <td><strong>Github</strong></td>
+            <td><code>read_repo(), write_repo(), create_pull_request()</code><br><span style="color:#777">Quản lý
+                Repository</span>
+            </td>
+            <td>AI tự commit code, tạo PR, review code, merge code.</td>
+          </tr>
+          <tr>
+            <td><strong>Brave Search</strong></td>
+            <td><code>web_scrape_engine()</code><br><span style="color:#777">Tự động tìm kiếm web</span></td>
+            <td>AI tự tìm kiếm web, không cần bạn copy-paste
+            </td>
           </tr>
         </table>
         <div
           style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 20px;">
-          *Chú thích từ DA: Các yếu tố như "TCP Hooks" hay "Vector Arrays" là cấu hình ngầm System, DA chúng ta không
+          *Ý là: Các yếu tố như "TCP Hooks" hay "Vector Arrays" là cấu hình ngầm System, DA chúng ta không
           cần gõ hay thao tác chúng bao giờ. Hãy hiểu đơn giản là: MCP giúp AI "giơ tay" mượn tạm Data BigQuery và "giơ
           tay" gửi tin nhắn Slack cho Team thay DA làm.
         </div>
@@ -687,7 +700,7 @@
             <li style="margin-bottom: 12px;">✅ <strong>Bước 1 - Khởi chạy:</strong> Tác Tử liên kết API Server của MCP
               BigQuery, vượt bảo mật, rút Matrix Data thô cần thiết.</li>
             <li style="margin-bottom: 12px;">✅ <strong>Bước 2 - Khối Chuyển Đổi Model:</strong> Mở thư viện Native
-              Python atplotlib ngầm, dựng ma trận hình ảnh Biểu đồ sắc nét để kết xuất tệp đồ họa.</li>
+              Python matplotlib ngầm, dựng ma trận hình ảnh Biểu đồ sắc nét để kết xuất tệp đồ họa.</li>
             <li>✅ <strong>Bước 3 - Cập Bến:</strong> Xác thực kết nối qua mạng với Notion API System Server, Up File
               thành Report khép kín chuẩn chỉ. <strong>(Tự Động Hóa 0% hao hụt người).</strong></li>
           </ul>
@@ -707,61 +720,70 @@
       <!-- Slide 15: Bài 1 - /compact (Tính năng nâng cao) -->
       <section>
         <span class="subtitle">Phần 7 — Module 1: Xoá Đệm Nhớ Hệ Thống</span>
-        <h2>13. Thực thi Lệnh Thuận Tiện: <code>/compact</code></h2>
+        <h2>13. <code>/compact</code></h2>
         <p>Bản chất kỹ thuật là <strong>Thu Gọn Số Lượng Token (Token Compaction)</strong>, làm sạch bộ nhớ để mô hình
-          không tốn công đọc các thông báo rác không quan trọng.</p>
+          không tốn công đọc các thông báo rác không quan trọng. Ý là:nén (tóm tắt) lịch sử hội thoại, tốn ít token hơn,
+          AI bớt ngu. CLAUDE 2026 có tính năng AUTO-COMPACT nhưng bị chửi lắm, khuyên là <strong>hãy compact trước khi
+            bị
+            auto-compact.</strong></p>
         <div class="grid-2" style="gap: 15px;">
           <div class="card" style="padding: 20px;">
             <p class="text-sm" style="margin-bottom: 5px;"><strong>1. Focus Compaction (Nén tái định hướng trọng
                 số)</strong></p>
             <div class="terminal-box" style="margin-top: 0; padding: 10px;">
-              <span class="terminal-cmd">/compact prioritize bảng JOIN User</span>
+              <span class="terminal-cmd">/compact Tập trung vào logic tính doanh thu theo tháng, bỏ qua các lỗi cài đặt
+                môi trường vừa rồi</span>
             </div>
-            <p class="text-sm" style="margin-top: 8px;">Dẹp đi những đoạn chat báo lỗi vụn vặt rác lề phía trên để bộ óc
-              Mô hình tập trung vào Trọng Số (Weights) chính.</p>
+            <p class="text-sm" style="margin-top: 8px;">30 phút cãi nhau với AI để cài đặt một cái thư viện bị lỗi. Bây
+              giờ lỗi đã xong, bạn muốn bắt đầu viết code chính, nhưng bộ não của AI đang bị "rác" bởi cả đống thông báo
+              lỗi vớ vẩn nãy giờ => COMPACT. <strong>Kết quả: </strong>Bộ nhớ của nó bây giờ "sạch" và dồn 100% công
+              lực vào việc tính toán.</p>
           </div>
           <div class="card" style="padding: 20px;">
             <p class="text-sm" style="margin-bottom: 5px;"><strong>2. Milestone Compaction (Nén chốt chặn hoàn
                 thành)</strong></p>
             <div class="terminal-box" style="margin-top: 0; padding: 10px;">
-              <span class="terminal-cmd">/compact Milestone checkpoint: Xong Auth, Chuyển sang Phase Query
-                System.</span>
+              <span class="terminal-cmd">/compact Chốt: Đã làm xong API đăng nhập và đăng ký. Bây giờ chuyển sang làm
+                tính năng quên mật khẩu.</span>
             </div>
-            <p class="text-sm" style="margin-top: 8px;">Xả bộ nhớ Context Logs cũ sau khi hoàn thành. Lưu lại mỗi cốt
-              lõi trước đưa Project rẽ nhánh Branch mới.</p>
+            <p class="text-sm" style="margin-top: 8px;"><strong>Mục đích: </strong>Xả bộ nhớ để máy chạy nhanh hơn
+              nhưng vẫn giữ lại "kết quả cuối cùng" để làm bước tiếp theo. <strong>Kết quả: </strong>AI dọn dẹp toàn bộ
+              code nháp, các
+              câu hỏi phụ trong quá trình làm API. Nó chỉ ghi chú lại một dòng trong bộ nhớ: "API Login/Register: OK" =>
+              Giờ nó có rất nhiều khoảng trống để suy nghĩ cho tính năng "Quên mật khẩu".</p>
           </div>
         </div>
-        <p class="text-sm" style="margin-top: 15px;"><strong>💡 Điều Kiện Kích Hoạt lúc rủi ro:</strong> Ngay khi AI mắc
-          triệu chứng Ảo Giác Thuật Toán (Hallucination) do Tràn giới hạn Tokens Memory Limits.</p>
+        <p class="text-sm" style="margin-top: 15px;"><strong>💡 Nhận biết:</strong> Khi AI bị ngu, mắc chứng Ảo Giác
+          Thuật Toán (Hallucination) do giới hạn Tokens Memory.</p>
       </section>
 
       <!-- Slide 15b: Phân biệt các lệnh -->
       <section>
         <span class="subtitle">Phần 7 — Module 1: Quản Trị Terminal Trực Tiếp</span>
-        <h2>14. Phân Luồng Meta-Commands</h2>
+        <h2>14. Commands Thông Dụng</h2>
         <table>
           <tr>
-            <th>Meta-Command Terminal</th>
-            <th>Cơ Chế Kích Hoạt (Pipeline Trigger)</th>
-            <th>Trường Hợp Ứng Dụng Hữu Dụng (Usecase Implementation)</th>
+            <th>Command</th>
+            <th>Trigger</th>
+            <th>Usecase</th>
           </tr>
           <tr>
-            <td><strong><span class="highlight-green">/compact</span></strong></td>
-            <td>Tóm tắt & Nén Token (Context Shrinking)</td>
-            <td>Duy trì cấu trúc cốt lõi tiến độ hệ thống Database (Project Memory) trong khi giảm tải CPU/GPU Delay,
-              không thoát Session Thread khởi điểm.</td>
+            <td><strong><span class="highlight-green">/review</span></strong></td>
+            <td>Tự phản biện (Self-Correction)</td>
+            <td>Kích hoạt chế độ kiểm tra toàn diện, giúp AI rà soát lỗi, lỗ hổng bảo mật, hoặc các vấn đề tuân thủ
+              trong code hoặc quy trình làm việc.</td>
+          </tr>
+          <tr>
+            <td><strong><span class="highlight-blue">/explain</span></strong></td>
+            <td>Giải thích & Phân tích (Explain & Analyze)</td>
+            <td>Kích hoạt chế độ phân tích sâu, giúp AI giải thích các đoạn code phức tạp hoặc logic hệ thống rắc rối
+              thành ngôn ngữ dễ hiểu, hỗ trợ quá trình học tập và gỡ lỗi.</td>
           </tr>
           <tr>
             <td><strong><span class="highlight-purple">/rewind</span></strong></td>
             <td>Trục xuất Lỗi (Rollback)</td>
             <td>Mô phỏng Undo Memory Version State. Khôi phục tình trạng bộ đệm Mô Hình trước khi Commit Logic sai hỏng
               làm lag Context, an toàn và dễ làm.</td>
-          </tr>
-          <tr>
-            <td><strong><span class="highlight-blue">/clear</span></strong></td>
-            <td>Hủy Phiên Làm Việc (Session Purge)</td>
-            <td>Reset Zero-shot hoàn chỉnh. Giúp xoá hoàn toàn cache cũ vướng bận, giải phóng không gian tư duy cho Data
-              Agent, giống như dọn dẹp bộ nhớ đệm.</td>
           </tr>
         </table>
       </section>
@@ -770,19 +792,28 @@
       <section>
         <span class="subtitle">Phần 7 — Module 2: Lớp Thiết Lập Môi Trường Workspace</span>
         <h2>15. Định vị Workspace Policy qua Folder <code>.claude</code></h2>
-        <p>Kho chứa Luật/Rules (Rule sets) áp đặt ranh giới chuẩn mực riêng ở thư mục làm việc, ép LLM tuân thủ.</p>
+        <p>Thiết quân luật, ép LLM tuân thủ.</p>
         <div class="terminal-box" style="font-size: 0.55em;">
-          <span style="color: #6a9955;">// Framework Logic Config: .claude/rules.md</span><br>
+          <span style="color: #6a9955;">.claude/rules.md</span><br>
           - Bắt buộc phải Output kiểu <span style="color: #ce9178;">snake_case</span> parameters.<br>
           - Xuất File Validation Data Data Schema chuẩn mực vào File <span style="color: #ce9178;">.csv</span> container
           objects format.<br>
           <br>
-          <span style="color: #6a9955;">// Truyền Inject Mảng State Mapping: .claude/memory.json</span><br>
+          <span style="color: #6a9955;">.claude/memory.json</span><br>
           { "last_exception_catch": "Backend Network BigQuery Protocol Timeout", "resolution_injection": "Append LIMIT
-          100 clauses to Root Nodes" }
+          100 clauses to Root Nodes" }<br>
+          <br>
+          <span style="color: #6a9955;">.claude/skills.json</span><br>
+          Khi thực hiện deploy, hãy chạy lệnh npm run build, kiểm tra thư mục dist, sau đó thực hiện git add ., git
+          commit -m 'deploy' và git push. Cuối cùng, hãy cung cấp link GitHub Pages cho tôi.<br>
+          <br>
+          <span style="color: #6a9955;">.claude/agents.json</span><br>
+          Bạn là một tester khó tính. Nhiệm vụ của bạn là chạy thử mọi dòng code tôi vừa viết, tìm ra các trường hợp
+          biên (edge cases) có thể làm sập web. Bạn không được khen code, chỉ được tìm lỗi.
         </div>
         <p class="text-sm" style="margin-top: 15px;">Khởi động cơ chế "Ép hiểu luật mới cho gõ phím". AI sẽ đọc System
-          Metadata Policy trước tiên khi bạn ra lệnh, chặn việc đi lệch hướng ngay từ đầu.</p>
+          Metadata Policy trước tiên khi bạn ra lệnh, chặn việc đi lệch hướng ngay từ đầu. Phân cấp: Nghiên cứu mới (có
+          thứ tự ưu tiên rõ ràng) → Logs cũ → KIs</p>
       </section>
 
       <!-- Slide 17: Bài 3 - Slash Commands -->
@@ -801,10 +832,9 @@
           </div>
           <div class="card" style="border-top-color: #f00;">
             <h3><code>/bug</code></h3>
-            <p class="text-sm">Kiểm Toán Tĩnh (Static Compiler Linter/Pre-check).</p>
+            <p class="text-sm">Tiền kiểm lỗi (Static Compiler Linter/Pre-check).</p>
             <div class="terminal-box" style="margin-top:5px; padding:10px;">
-              <span class="terminal-output">AST Linter Hook: Phân giải Validation Failure tại
-                folder_main/query.sql<br>Initiating Context Auto-Fixing Automation...</span>
+              <span class="terminal-output">Lỗi ở dòng 4: Bạn đang JOIN bảng User nhưng thiếu điều kiện ON.</span>
             </div>
           </div>
         </div>
@@ -814,33 +844,28 @@
       <section>
         <span class="subtitle">Phần 7 — Module 4: Xử Lý Nền tự động hóa với Hooks</span>
         <h2>17. Listeners Hooks (Hàm Lắng Nghe Sự Kiện)</h2>
-        <p>Gắn Script dọn dẹp Code và Điểm cắt Thực thi (Execution Breakpoints) vào vòng đời Code generation.</p>
+        <p>Gắn Script dọn dẹp Code và Bíp sau khi Agent chạy xong.</p>
         <div class="terminal-box" style="font-size: 0.6em;">
-          <span style="color: #6a9955;">// Lifecycle Config Manifest File: .claude/hooks.json</span><br>
+          <span style="color: #6a9955;">.claude/hooks.json</span><br>
           {<br>
           &nbsp;&nbsp;"post-save": "sql-formatter --write",<br>
-          &nbsp;&nbsp;"pre-run": "python check_privacy_anomalies_layer.py"<br>
+          &nbsp;&nbsp;"post-run": "powershell -c \"([System.Media.SystemSounds]::Exclamation).Play()\""<br>
           }
         </div>
         <div class="card" style="margin-top:20px;">
-          <p class="text-sm"><strong>Ứng Dụng Hữu Ích Cực Độ:</strong> Ở Hook "post-save" End-of-Stream, tự dưng mã
+          <p class="text-sm"><strong>"post-save"</strong> End-of-Stream, tự dưng mã
             Agent sinh SQL xong. Bạn chả cần làm gì, nền tảng bắn Process Pipeline (Terminal Script) kích chạy công cụ
             căn chỉnh Formats (<code>sql-formatter</code>). Trả ra Codebase vuông vức, sạch chuẩn mà chả tốn 10 giây
-            Manual Human Interaction.</p>
-        </div>
-        <div
-          style="font-size: 0.5em; text-align: left; color: #888; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 20px;">
-          *Chú thích cho Phần Lệnh (Slide 14 đến 18): Dân Data không phải gõ bất kỳ câu lệnh điều khiển khô khan nào.
-          Tool AI bản mới nhất như AntiGravity có giao diện trực quan hỗ trợ sẵn hoặc tự động quyết định lúc nào cần
-          dùng /rewind lúc lỗi.
+            Manual Human Interaction. Xong <strong>"post-run"</strong> nó làm kêu lên 1 tiếng "Bíp" để báo hiệu (Nhớ bật
+            loa).</p>
         </div>
       </section>
 
       <!-- Slide 19: Cảm ơn -->
       <section>
         <h1 style="text-align: center; font-size: 3.5em; letter-spacing: 0.1em; margin-bottom: 10px;">THANK YOU</h1>
-        <p style="text-align: center; color: #777; font-size: 0.8em; font-weight: 600; text-transform: uppercase;">
-          OMD Data Analytics Team <br> Core Technology Framework - 2026
+        <p style="text-align: center; color: #777; font-size: 0.8em; font-weight: 600; text-transform: uppercase;">Road
+          to Agentic Data Analyst - 2026
         </p>
       </section>
     </div>
