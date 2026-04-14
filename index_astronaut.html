@@ -325,38 +325,44 @@
     /* Global Home Button */
     .home-btn {
       position: fixed;
-      top: 40px;
-      right: 50px;
-      z-index: 9999;
+      top: 24px;
+      right: 24px;
+      z-index: 1000;
       font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 2px;
+      font-weight: 600;
+      font-size: 13px;
       color: #00f3ff;
       text-decoration: none;
-      text-transform: uppercase;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.4s ease;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
+      padding: 8px 20px;
+      border-radius: 30px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(0, 243, 255, 0.4);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
       text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
 
     .home-btn:hover {
-      opacity: 1 !important;
-      border-bottom-color: #00f3ff;
+      background: #00f3ff;
+      color: #000;
       transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+      text-shadow: none;
     }
 
-    .home-btn:active {
-      transform: translateY(0);
-    }
   </style>
 </head>
 
 <body>
-  <a href="#/0" class="home-btn" id="home-link">HOME</a>
+  <a href="index.html" class="home-btn" id="home-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    PORTAL
+  </a>
+
 
   <div class="reveal">
     <div class="slides">
