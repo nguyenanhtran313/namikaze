@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
             --text-medium: #5f6368;
             --bg-light: #f8f9fa;
             --border-color: #dadce0;
-            --shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+            --shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -105,8 +106,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Home Section */
@@ -144,7 +152,7 @@
 
         .looker-btn:hover {
             background-color: #1765cc;
-            box-shadow: 0 1px 3px 1px rgba(60,64,67,0.15);
+            box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 0.15);
         }
 
         /* Product Grid */
@@ -217,7 +225,8 @@
             margin-bottom: 8px;
         }
 
-        .form-row input, .form-row textarea {
+        .form-row input,
+        .form-row textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid var(--border-color);
@@ -232,7 +241,12 @@
             gap: 6px;
             margin-bottom: 32px;
         }
-        .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
 
         footer {
             margin-top: auto;
@@ -242,16 +256,17 @@
             font-size: 13px;
             color: var(--text-medium);
         }
-
     </style>
 </head>
+
 <body>
 
     <nav>
         <div class="logo">
             <svg width="24" height="24" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                <circle cx="12" cy="12" r="5" fill="#4285F4"/>
+                <path fill="#4285F4"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                <circle cx="12" cy="12" r="5" fill="#4285F4" />
             </svg>
             <span>Hello, I'm <span style="font-weight: 700;">nana</span></span>
         </div>
@@ -272,7 +287,8 @@
                 <div class="dot" style="background: var(--google-green);"></div>
             </div>
             <h1>Tổng hợp khóa đào tạo AI Coding của nana</h1>
-            <p>Khám phá bộ sưu tập các bài trình bày chuyên sâu về kỹ năng sử dụng AI Tools dành riêng cho Data Analyst Team. Tối ưu hóa hiệu suất làm việc với phong cách trình bày hiện đại.</p>
+            <p>Khám phá bộ sưu tập các bài trình bày chuyên sâu về kỹ năng sử dụng AI Tools dành riêng cho Data Analyst
+                Team. Tối ưu hóa hiệu suất làm việc với phong cách trình bày hiện đại.</p>
             <a href="javascript:void(0)" class="looker-btn" onclick="navigate('product')">Xem danh sách khóa học</a>
         </div>
     </section>
@@ -281,7 +297,7 @@
     <section id="product">
         <h2 style="font-weight: 400; font-size: 32px;">Lớp Học Của Tôi</h2>
         <p style="color: var(--text-medium); margin-top: 8px;">Chọn phiên bản phù hợp với sở thích thẩm mỹ của bạn.</p>
-        
+
         <div class="product-grid">
             <a href="index_looker.html" class="product-card">
                 <span class="style-badge" style="color: var(--google-blue);">Google Looker</span>
@@ -293,14 +309,16 @@
             <a href="index_astronaut.html" class="product-card">
                 <span class="style-badge" style="color: #9334e6;">Cyber Space</span>
                 <h3>AI Coding Advanced</h3>
-                <p>Phong cách Astronaut với tông tối Neon cực ngầu, phù hợp cho những ai yêu thích cảm giác công nghệ cao.</p>
+                <p>Phong cách Astronaut với tông tối Neon cực ngầu, phù hợp cho những ai yêu thích cảm giác công nghệ
+                    cao.</p>
                 <div style="font-weight: 500; font-size: 13px; color: var(--google-blue);">Khám phá &rarr;</div>
             </a>
 
             <a href="index_original_reveal.html" class="product-card">
                 <span class="style-badge" style="color: var(--google-green);">Modern Classic</span>
                 <h3>Original AI Training</h3>
-                <p>Phiên bản cơ bản, trình bày dễ hiểu, bố cục truyền thống giúp tập trung tối đa vào nội dung bài học.</p>
+                <p>Phiên bản cơ bản, trình bày dễ hiểu, bố cục truyền thống giúp tập trung tối đa vào nội dung bài học.
+                </p>
                 <div style="font-weight: 500; font-size: 13px; color: var(--google-blue);">Khám phá &rarr;</div>
             </a>
         </div>
@@ -310,8 +328,9 @@
     <section id="contact">
         <div style="max-width: 600px;">
             <h2 style="font-weight: 400; font-size: 32px;">Liên hệ với nana</h2>
-            <p style="color: var(--text-medium); margin-top: 8px;">Cùng thảo luận về các giải pháp AI cho đội ngũ của bạn.</p>
-            
+            <p style="color: var(--text-medium); margin-top: 8px;">Cùng thảo luận về các giải pháp AI cho đội ngũ của
+                bạn.</p>
+
             <div class="contact-box">
                 <div class="form-row">
                     <label>Họ tên</label>
@@ -327,7 +346,7 @@
     </section>
 
     <footer>
-        &copy; 2026 nana's training portal • Powered by Looker Design System
+        &copy; 2026 OMD Data's training portal • Powered by ourself
     </footer>
 
     <script>
@@ -350,9 +369,10 @@
             // Update Section UI
             document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            
+
             window.scrollTo(0, 0);
         }
     </script>
 </body>
+
 </html>
